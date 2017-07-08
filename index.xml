@@ -6,10 +6,20 @@
     <description>Recent content on Vibhav Sinha</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 25 Jun 2017 16:55:12 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 08 Jul 2017 18:03:33 +0530</lastBuildDate>
     
 	<atom:link href="https://vsinha.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Sixth Extinction: Book Review</title>
+      <link>https://vsinha.me/blog/the-sixth-extinction-book-review/</link>
+      <pubDate>Sat, 08 Jul 2017 18:03:33 +0530</pubDate>
+      
+      <guid>https://vsinha.me/blog/the-sixth-extinction-book-review/</guid>
+      <description>Elizabeth Kolbert: A journalist at The New Yorker who has travelled in many ecological systems and collected her experiences in two books: Field Notes from a Catastrophe: Man, Nature, and Climate Change and The Sixth Extinction: An Unnatural History.
+This book presents numerous facts and figures on how the sixth extinction event is ongoing. The last five extinction events were triggered by non-organic forces such as natural climate change or asteroid impacts.</description>
+    </item>
     
     <item>
       <title>Hello Hugo</title>
