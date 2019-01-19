@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://vsinha.me/blog/ejecting-react-native-jan-2019/</loc>
+    <lastmod>2019-01-19T23:28:52+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://vsinha.me/blog/gcloud-logging-readrequestsperminuteperproject/</loc>
     <lastmod>2017-09-27T22:37:37+05:30</lastmod>
   </url>
@@ -19,7 +24,7 @@
   
   <url>
     <loc>https://vsinha.me/blog/</loc>
-    <lastmod>2017-09-27T22:37:37+05:30</lastmod>
+    <lastmod>2019-01-19T23:28:52+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -35,7 +40,7 @@
   
   <url>
     <loc>https://vsinha.me/</loc>
-    <lastmod>2017-09-27T22:37:37+05:30</lastmod>
+    <lastmod>2019-01-19T23:28:52+05:30</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,10 +6,20 @@
     <description>Recent content on Vibhav Sinha</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 27 Sep 2017 22:37:37 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 19 Jan 2019 23:28:52 +0530</lastBuildDate>
     
 	<atom:link href="https://vsinha.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ejecting React Native Jan 2019</title>
+      <link>https://vsinha.me/blog/ejecting-react-native-jan-2019/</link>
+      <pubDate>Sat, 19 Jan 2019 23:28:52 +0530</pubDate>
+      
+      <guid>https://vsinha.me/blog/ejecting-react-native-jan-2019/</guid>
+      <description>Ejected react native getting started The experience of installing react native tells me that this write-up will be deprecated tomorrow. So, if you are reading this on any date after 20 January, 2019, good luck.
+Disclaimer: Most probably things wont go as described below. There are just too many variables and too many updates and too many chances of missing something critical. More importantly, most of us are guilty of not reading the documentation sincerely.</description>
+    </item>
     
     <item>
       <title>Gcloud Logging ReadRequestsPerMinutePerProject</title>
