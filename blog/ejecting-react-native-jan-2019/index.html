@@ -9,12 +9,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Vibhav Sinha">
-<meta name="description" content="Ejected react native getting started The experience of installing react native tells me that this write-up will be deprecated tomorrow. So, if you are reading this on any date after 20 January, 2019, good luck.
-Disclaimer: Most probably things wont go as described below. There are just too many variables and too many updates and too many chances of missing something critical. More importantly, most of us are guilty of not reading the documentation sincerely.">
+<meta name="description" content="Ejected react native getting started The experience of installing react native tells me that like every other react-native guide this write-up will be deprecated tomorrow. So, if you are reading this on any date after 20 January, 2019, good luck. Individual error message might survive and those pieces might continue being helpful to debug the eject process.
+Disclaimer: Most probably things wont go as described below. There are just too many variables and too many updates and too many chances of missing something critical.">
 
 <meta property="og:title" content="Ejecting React Native Jan 2019" />
-<meta property="og:description" content="Ejected react native getting started The experience of installing react native tells me that this write-up will be deprecated tomorrow. So, if you are reading this on any date after 20 January, 2019, good luck.
-Disclaimer: Most probably things wont go as described below. There are just too many variables and too many updates and too many chances of missing something critical. More importantly, most of us are guilty of not reading the documentation sincerely." />
+<meta property="og:description" content="Ejected react native getting started The experience of installing react native tells me that like every other react-native guide this write-up will be deprecated tomorrow. So, if you are reading this on any date after 20 January, 2019, good luck. Individual error message might survive and those pieces might continue being helpful to debug the eject process.
+Disclaimer: Most probably things wont go as described below. There are just too many variables and too many updates and too many chances of missing something critical." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vsinha.me/blog/ejecting-react-native-jan-2019/" /><meta property="article:published_time" content="2019-01-19T23:28:52&#43;05:30"/>
 <meta property="article:modified_time" content="2019-01-19T23:28:52&#43;05:30"/>
@@ -44,11 +44,11 @@ Disclaimer: Most probably things wont go as described below. There are just too 
 
 
     
-    <link rel="stylesheet" href="https://vsinha.me/css/reset.css?t=2019-01-20%2000%3a04%3a54.605776058%20%2b0530%20IST%20m%3d%2b0.034724497">
-    <link rel="stylesheet" href="https://vsinha.me/css/pygments.css?t=2019-01-20%2000%3a04%3a54.605776058%20%2b0530%20IST%20m%3d%2b0.034724497">
-    <link rel="stylesheet" href="https://vsinha.me/css/main.css?t=2019-01-20%2000%3a04%3a54.605776058%20%2b0530%20IST%20m%3d%2b0.034724497">
+    <link rel="stylesheet" href="https://vsinha.me/css/reset.css?t=2019-01-20%2000%3a16%3a10.777224576%20%2b0530%20IST%20m%3d%2b0.042870126">
+    <link rel="stylesheet" href="https://vsinha.me/css/pygments.css?t=2019-01-20%2000%3a16%3a10.777224576%20%2b0530%20IST%20m%3d%2b0.042870126">
+    <link rel="stylesheet" href="https://vsinha.me/css/main.css?t=2019-01-20%2000%3a16%3a10.777224576%20%2b0530%20IST%20m%3d%2b0.042870126">
     
-        <link rel="stylesheet" href="https://vsinha.me/css/override.css?t=2019-01-20%2000%3a04%3a54.605776058%20%2b0530%20IST%20m%3d%2b0.034724497">
+        <link rel="stylesheet" href="https://vsinha.me/css/override.css?t=2019-01-20%2000%3a16%3a10.777224576%20%2b0530%20IST%20m%3d%2b0.042870126">
     
 
 
@@ -189,16 +189,16 @@ Disclaimer: Most probably things wont go as described below. There are just too 
 
 <h1 id="ejected-react-native-getting-started">Ejected react native getting started</h1>
 
-<p>The experience of installing react native tells me that this write-up will be deprecated tomorrow. So, if you are reading this on any date after 20 January, 2019, good luck.</p>
+<p>The experience of installing react native tells me that like every other react-native guide this write-up will be deprecated tomorrow. So, if you are reading this on any date after 20 January, 2019, good luck. Individual error message might survive and those pieces might continue being helpful to debug the eject process.</p>
 
 <p><em>Disclaimer: Most probably things wont go as described below. There are just too many variables and too many updates and too many chances of missing something critical. More importantly, most of us are guilty of not reading the documentation sincerely. I am sure some of the below errors is because I missed something obvious in the official guide.</em></p>
 
-<p>The official documentation is asking to get started using the expo. The create-react-native-app that I had seen last time is now deprecated and project archived. The thing is, doing anything complicated with the  application requires you to &ldquo;eject&rdquo; the app. Unless your application is simply informational, you will end-up ejecting the app. Expo client does not have any method to interface with the native system. Even if you are using a plugin which needs to interface with the native system, you will have to eject the app. This is something to do with the dynamic build process of expo.</p>
+<p>We will start as the official documentation describes and continue from there. The <code>create-react-native-app</code> that I had seen last time is now deprecated and project archived. The thing is, doing anything complicated with the  application requires you to &ldquo;eject&rdquo; the app. Unless your application is simply informational, you will end-up ejecting the app. Expo client does not have any method to interface with the native system. Even if you are using a plugin which needs to interface with the native system, you will have to eject the app. This is something to do with the dynamic build process of expo.</p>
 
-<p>Make sure you have the following installed</p>
+<p>You will need the basic following to get started:</p>
 
 <ol>
-<li>Node/NPM</li>
+<li>Node/NPM (recommended installation: <a href="https://github.com/creationix/nvm">nvm</a>)</li>
 <li>Android SDK (or the iOS stuff, I haven&rsquo;t tried those here)</li>
 </ol>
 
@@ -330,7 +330,7 @@ Disclaimer: Most probably things wont go as described below. There are just too 
      },
 </code></pre>
 
-<p><code>0.57.8</code> is the latest react-native version at the time of writing. The <code>^</code> at the start means that npm will try to install a latest version compatible with 0.57.8. According to semver, for 0.x range, any change in second digit will result in incompatibility. So, this will upgrade when <code>0.57.9</code> will be released but will not update to <code>0.58.0</code>.</p>
+<p><code>0.57.8</code> is the latest react-native version at the time of writing. The <code>^</code> at the start means that npm will try to install a latest version compatible with 0.57.8. <a href="https://docs.npmjs.com/misc/semver#caret-ranges-123-025-004">According to semver</a>, for 0.x range, any change in second digit will result in incompatibility. So, this will upgrade when <code>0.57.9</code> will be released but will not update to <code>0.58.0</code>.</p>
 
 <p>Running <code>yarn android</code> gives success on the command line. But the app launched on device is a bright scary red.</p>
 
