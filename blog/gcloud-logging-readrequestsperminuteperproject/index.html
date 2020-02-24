@@ -1,205 +1,80 @@
 <!DOCTYPE html>
-<html lang="en-US">
-
+<html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer">
-<meta name="author" content="Vibhav Sinha">
-<meta name="description" content="The default functions of listLogEntries and listLogEntriesStream have auto paginate turned on by default. This itself is not an issue but when you have a really large set of logs, this can be difficult. A default google project has fair usage soft limitations setup on a number of API requests. Listing log entries is also restricted to about 60 requests per minute. This means that using any of the above methods will definitely result in Error about Insufficient tokens and limit reached ofReadRequestsPerMinutePerProject.">
-
-<meta property="og:title" content="Gcloud Logging ReadRequestsPerMinutePerProject" />
-<meta property="og:description" content="The default functions of listLogEntries and listLogEntriesStream have auto paginate turned on by default. This itself is not an issue but when you have a really large set of logs, this can be difficult. A default google project has fair usage soft limitations setup on a number of API requests. Listing log entries is also restricted to about 60 requests per minute. This means that using any of the above methods will definitely result in Error about Insufficient tokens and limit reached ofReadRequestsPerMinutePerProject." />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Gcloud Logging ReadRequestsPerMinutePerProject - Vibhav Sinha</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Gcloud Logging ReadRequestsPerMinutePerProject" />
+<meta property="og:description" content="The default functions of listLogEntries and listLogEntriesStream have auto paginate turned on by default." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vsinha.me/blog/gcloud-logging-readrequestsperminuteperproject/" />
-<meta property="article:published_time" content="2017-09-27T22:37:37&#43;05:30"/>
-<meta property="article:modified_time" content="2017-09-27T22:37:37&#43;05:30"/>
+<meta property="article:published_time" content="2017-09-27T22:37:37+05:30" />
+<meta property="article:modified_time" content="2017-09-27T22:37:37+05:30" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Gcloud Logging ReadRequestsPerMinutePerProject"/>
+<meta name="twitter:description" content="The default functions of listLogEntries and listLogEntriesStream have auto paginate turned on by default."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
+	<link rel="stylesheet" type="text/css" media="screen" href="https://vsinha.mecss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://vsinha.mecss/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://vsinha.mecss/custom.css" />
+	<link rel="stylesheet" type="text/css" href="https://vsinha.mecss/dark.css" media="(prefers-color-scheme: dark)" />
+	<link rel="stylesheet" type="text/css" href="https://vsinha.mecss/custom-dark.css" media="(prefers-color-scheme: dark)" />
 
-<title>
-
-
-     Gcloud Logging ReadRequestsPerMinutePerProject 
-
-</title>
-<link rel="canonical" href="https://vsinha.me/blog/gcloud-logging-readrequestsperminuteperproject/">
-
-
-
-
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
-
-
-
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
-
-
-
-    
-    <link rel="stylesheet" href="https://vsinha.me/css/reset.css?t=2019-06-24%2012%3a51%3a51.391062016%20%2b0530%20IST%20m%3d%2b0.057292819">
-    <link rel="stylesheet" href="https://vsinha.me/css/pygments.css?t=2019-06-24%2012%3a51%3a51.391062016%20%2b0530%20IST%20m%3d%2b0.057292819">
-    <link rel="stylesheet" href="https://vsinha.me/css/main.css?t=2019-06-24%2012%3a51%3a51.391062016%20%2b0530%20IST%20m%3d%2b0.057292819">
-    
-        <link rel="stylesheet" href="https://vsinha.me/css/override.css?t=2019-06-24%2012%3a51%3a51.391062016%20%2b0530%20IST%20m%3d%2b0.057292819">
-    
-
-
-
-
-<link rel="shortcut icon"
-
-    href="https://vsinha.me/img/who.ico"
-
->
-
-
-
-
-
-
-
-
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://vsinha.mejs/main.js"></script>
+	<script src="https://vsinha.mejs/abc.js"></script>
+	<script src="https://vsinha.mejs/xyz.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://vsinha.me">Vibhav Sinha</a></h1>
+	<div class="site-description"><h2>Human caught in the web of bots programmed to make more bots</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/vibhavsinha" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/vibhav_sinha" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
 
-<body lang="en">
-
-<section class="header">
-    <div class="container">
-        <div class="content">
-            
-                
-                
-                
-                
-                
-                    
-                
-                    
-                
-                    
-                        
-                    
-                
-                    
-                        
-                    
-                
-                    
-                        
-                    
-                
-                    
-                
-                    
-                
-                
-                <a href="https://vsinha.me/"><img class="avatar" src="https://vsinha.me/img/profile.png" srcset="https://vsinha.me/img/profile.png 1x,https://vsinha.me/img/profile-2x.png 2x,https://vsinha.me/img/profile-3x.png 3x,https://vsinha.me/img/profile-4x.png 4x"></a>
-            
-            <a href="https://vsinha.me/"><div class="name">Vibhav Sinha</div></a>
-            
-              <h3 class="self-intro">Human caught in the web of bots programmed to make more bots</h3>
-            
-            <nav>
-                <ul>
-                    
-                </ul>
-            </nav>
-        </div>
-    </div>
-</section>
-
-<section class="icons">
-    <div class="container">
-        <div class="content">
-        
-            <a href="//github.com/vibhavsinha" target="_blank" rel="noopener"><img class="icon" src="https://vsinha.me/img/github.svg" alt="github" /></a>
-        
-
-        
-
-        
-            <a href="//twitter.com/vibhav_sinha" target="_blank" rel="noopener"><img class="icon" src="https://vsinha.me/img/twitter.svg" alt="twitter" /></a>
-        
-
-	
-
-        
-
-        
-
-        
-            <a href="//linkedin.com/in/vibhavsinha" target="_blank" rel="noopener"><img class="icon" src="https://vsinha.me/img/linkedin.svg" alt="linkedin" /></a>
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-            <a href="mailto:v@vsinha.me"><img class="icon" src="https://vsinha.me/img/email.svg" alt="email" /></a>
-        
-
-        
-
-        
-        </div>
-    </div>
-</section>
-
-
-<section class="main post non-narrow zero-top-spacing">
-    <div class="container">
-        <div class="content">
-            <div class="front-matter">
-                <div class="title-container">
-                    <div class="page-heading">
-
-    Gcloud Logging ReadRequestsPerMinutePerProject
-
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/blog">blog</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+		</ul>
+	</nav>
 </div>
 
-                    <div class="initials"><a href="https://vsinha.me"></a></div>
-                </div>
-                <div class="meta">
-                    
-                    <div class="date" title='Wed Sep 27 2017 22:37:37 IST'>Sep 27, 2017</div>
-                    
-                    
-		    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
-                    
-                </div>
-            </div>
-            <div class="markdown">
-                <p>The default functions of <code>listLogEntries</code> and <code>listLogEntriesStream</code> have auto
+
+		<div class="post-header">
+			<h1 class="title">Gcloud Logging ReadRequestsPerMinutePerProject</h1>
+			<div class="meta">Posted at &mdash; Sep 27, 2017</div>
+		</div>
+
+		<div class="markdown">
+			<p>The default functions of <code>listLogEntries</code> and <code>listLogEntriesStream</code> have auto
 paginate turned on by default. This itself is not an issue but when you have a
 really large set of logs, this can be difficult. A default google project has
 fair usage soft limitations setup on a number of API requests. Listing log
 entries is also restricted to about 60 requests per minute. This means that
 using any of the above methods will definitely result in Error about
 Insufficient tokens and limit reached of<code>ReadRequestsPerMinutePerProject</code>.</p>
-
 <p>To work around this issue, we need to disable auto-paginate and correctly handle
 the Error about insufficient tokens. The below code is meant to do this and wait
 5 minutes every time the above error occurs.</p>
-
 <p>This is supposed to emulate the behaviour of <code>listLogEntriesStream</code> while
 internally throttling the paginated requests.</p>
-
-<pre><code>const logging = require('@google-cloud/logging').v2({
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">const logging = require(&#39;@google-cloud/logging&#39;).v2({
   projectId: process.env.gcloudProject,
   keyFilename: process.env.gcloudKeyPath,
 });
@@ -224,17 +99,17 @@ exports.default = (logRequest, options) =&gt; {
   let processResponse = (responses) =&gt; {
     let resources = responses[0];
     let nextRequest = responses[1];
-    console.log('got responses: ', resources.length);
+    console.log(&#39;got responses: &#39;, resources.length);
     resources.forEach((log) =&gt; {
-      result.emit('data', log);
+      result.emit(&#39;data&#39;, log);
     });
     if (nextRequest) {
-      console.log('sending next request ', nextRequest);
+      console.log(&#39;sending next request &#39;, nextRequest);
       loggingClient.listLogEntries(nextRequest, options)
         .then(processResponse)
         .catch((err) =&gt; {
-          if (err.message.startsWith('Insufficient tokens for quota ')) {
-            console.log('waiting will be a good idea at this point');
+          if (err.message.startsWith(&#39;Insufficient tokens for quota &#39;)) {
+            console.log(&#39;waiting will be a good idea at this point&#39;);
             setTimeout(() =&gt; {
               processResponse([[], nextRequest]);
             }, 5*60*1000);
@@ -243,46 +118,44 @@ exports.default = (logRequest, options) =&gt; {
           console.error(err);
         });
     } else {
-      console.log('ending stream');
-      result.emit('end');
+      console.log(&#39;ending stream&#39;);
+      result.emit(&#39;end&#39;);
     }
   };
   processResponse([[], logRequest]);
   return result;
 };
-</code></pre>
+</code></pre></div>
+		</div>
 
-                <br>
-                
-                <p class="back-to-posts"><a href="https://vsinha.me/blog">Back to posts</a></p>
-            </div>
-            <br>
-            <div class="disqus">
-                <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "pursuitofexcellence" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
+		<div class="post-tags">
+			
+				
+			
+		</div>
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
+
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'pursuitofexcellence';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
-            
-        </div>
-    </div>
-</section>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright 2020 | All code snippets MIT Licensed |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
 
 
 
@@ -297,19 +170,6 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
-  
-
-  <script type="text/javascript">
-    hljs.initHighlightingOnLoad();
-  </script>
-
-
-
-
-
+<script>feather.replace()</script>
 </body>
 </html>
-

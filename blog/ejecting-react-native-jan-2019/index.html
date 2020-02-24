@@ -1,464 +1,255 @@
 <!DOCTYPE html>
-<html lang="en-US">
-
+<html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer">
-<meta name="author" content="Vibhav Sinha">
-<meta name="description" content="Ejected react native getting started The experience of installing react native tells me that like every other react-native guide this write-up will be deprecated tomorrow. So, if you are reading this on any date after 20 January, 2019, good luck. Individual error message might survive and those pieces might continue being helpful to debug the eject process.
-Disclaimer: Most probably things wont go as described below. There are just too many variables and too many updates and too many chances of missing something critical.">
-
-<meta property="og:title" content="Ejecting React Native Jan 2019" />
-<meta property="og:description" content="Ejected react native getting started The experience of installing react native tells me that like every other react-native guide this write-up will be deprecated tomorrow. So, if you are reading this on any date after 20 January, 2019, good luck. Individual error message might survive and those pieces might continue being helpful to debug the eject process.
-Disclaimer: Most probably things wont go as described below. There are just too many variables and too many updates and too many chances of missing something critical." />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Ejecting React Native Jan 2019 - Vibhav Sinha</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Ejecting React Native Jan 2019" />
+<meta property="og:description" content="Ejected react native getting started The experience of installing react native tells me that like every other react-native guide this write-up will be deprecated tomorrow." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vsinha.me/blog/ejecting-react-native-jan-2019/" />
-<meta property="article:published_time" content="2019-01-19T23:28:52&#43;05:30"/>
-<meta property="article:modified_time" content="2019-01-19T23:28:52&#43;05:30"/>
+<meta property="article:published_time" content="2019-01-19T23:28:52+05:30" />
+<meta property="article:modified_time" content="2019-01-19T23:28:52+05:30" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ejecting React Native Jan 2019"/>
+<meta name="twitter:description" content="Ejected react native getting started The experience of installing react native tells me that like every other react-native guide this write-up will be deprecated tomorrow."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
+	<link rel="stylesheet" type="text/css" media="screen" href="https://vsinha.mecss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://vsinha.mecss/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://vsinha.mecss/custom.css" />
+	<link rel="stylesheet" type="text/css" href="https://vsinha.mecss/dark.css" media="(prefers-color-scheme: dark)" />
+	<link rel="stylesheet" type="text/css" href="https://vsinha.mecss/custom-dark.css" media="(prefers-color-scheme: dark)" />
 
-<title>
-
-
-     Ejecting React Native Jan 2019 
-
-</title>
-<link rel="canonical" href="https://vsinha.me/blog/ejecting-react-native-jan-2019/">
-
-
-
-
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
-
-
-
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
-
-
-
-    
-    <link rel="stylesheet" href="https://vsinha.me/css/reset.css?t=2019-06-24%2012%3a51%3a51.381182848%20%2b0530%20IST%20m%3d%2b0.047413760">
-    <link rel="stylesheet" href="https://vsinha.me/css/pygments.css?t=2019-06-24%2012%3a51%3a51.381182848%20%2b0530%20IST%20m%3d%2b0.047413760">
-    <link rel="stylesheet" href="https://vsinha.me/css/main.css?t=2019-06-24%2012%3a51%3a51.381182848%20%2b0530%20IST%20m%3d%2b0.047413760">
-    
-        <link rel="stylesheet" href="https://vsinha.me/css/override.css?t=2019-06-24%2012%3a51%3a51.381182848%20%2b0530%20IST%20m%3d%2b0.047413760">
-    
-
-
-
-
-<link rel="shortcut icon"
-
-    href="https://vsinha.me/img/who.ico"
-
->
-
-
-
-
-
-
-
-
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://vsinha.mejs/main.js"></script>
+	<script src="https://vsinha.mejs/abc.js"></script>
+	<script src="https://vsinha.mejs/xyz.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://vsinha.me">Vibhav Sinha</a></h1>
+	<div class="site-description"><h2>Human caught in the web of bots programmed to make more bots</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/vibhavsinha" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/vibhav_sinha" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
 
-<body lang="en">
-
-<section class="header">
-    <div class="container">
-        <div class="content">
-            
-                
-                
-                
-                
-                
-                    
-                
-                    
-                
-                    
-                        
-                    
-                
-                    
-                        
-                    
-                
-                    
-                        
-                    
-                
-                    
-                
-                    
-                
-                
-                <a href="https://vsinha.me/"><img class="avatar" src="https://vsinha.me/img/profile.png" srcset="https://vsinha.me/img/profile.png 1x,https://vsinha.me/img/profile-2x.png 2x,https://vsinha.me/img/profile-3x.png 3x,https://vsinha.me/img/profile-4x.png 4x"></a>
-            
-            <a href="https://vsinha.me/"><div class="name">Vibhav Sinha</div></a>
-            
-              <h3 class="self-intro">Human caught in the web of bots programmed to make more bots</h3>
-            
-            <nav>
-                <ul>
-                    
-                </ul>
-            </nav>
-        </div>
-    </div>
-</section>
-
-<section class="icons">
-    <div class="container">
-        <div class="content">
-        
-            <a href="//github.com/vibhavsinha" target="_blank" rel="noopener"><img class="icon" src="https://vsinha.me/img/github.svg" alt="github" /></a>
-        
-
-        
-
-        
-            <a href="//twitter.com/vibhav_sinha" target="_blank" rel="noopener"><img class="icon" src="https://vsinha.me/img/twitter.svg" alt="twitter" /></a>
-        
-
-	
-
-        
-
-        
-
-        
-            <a href="//linkedin.com/in/vibhavsinha" target="_blank" rel="noopener"><img class="icon" src="https://vsinha.me/img/linkedin.svg" alt="linkedin" /></a>
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-            <a href="mailto:v@vsinha.me"><img class="icon" src="https://vsinha.me/img/email.svg" alt="email" /></a>
-        
-
-        
-
-        
-        </div>
-    </div>
-</section>
-
-
-<section class="main post non-narrow zero-top-spacing">
-    <div class="container">
-        <div class="content">
-            <div class="front-matter">
-                <div class="title-container">
-                    <div class="page-heading">
-
-    Ejecting React Native Jan 2019
-
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/blog">blog</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+		</ul>
+	</nav>
 </div>
 
-                    <div class="initials"><a href="https://vsinha.me"></a></div>
-                </div>
-                <div class="meta">
-                    
-                    <div class="date" title='Sat Jan 19 2019 23:28:52 IST'>Jan 19, 2019</div>
-                    
-                    
-		    <div class="reading-time"><div class="middot"></div>7 minutes read</div>
-                    
-                </div>
-            </div>
-            <div class="markdown">
-                
 
-<h1 id="ejected-react-native-getting-started">Ejected react native getting started</h1>
+		<div class="post-header">
+			<h1 class="title">Ejecting React Native Jan 2019</h1>
+			<div class="meta">Posted at &mdash; Jan 19, 2019</div>
+		</div>
 
+		<div class="markdown">
+			<h1 id="ejected-react-native-getting-started">Ejected react native getting started</h1>
 <p>The experience of installing react native tells me that like every other react-native guide this write-up will be deprecated tomorrow. So, if you are reading this on any date after 20 January, 2019, good luck. Individual error message might survive and those pieces might continue being helpful to debug the eject process.</p>
-
 <p><em>Disclaimer: Most probably things wont go as described below. There are just too many variables and too many updates and too many chances of missing something critical. More importantly, most of us are guilty of not reading the documentation sincerely. I am sure some of the below errors is because I missed something obvious in the official guide.</em></p>
-
 <p>We will start as the official documentation describes and continue from there. The <code>create-react-native-app</code> that I had seen last time is now deprecated and project archived. The thing is, doing anything complicated with the  application requires you to &ldquo;eject&rdquo; the app. Unless your application is simply informational, you will end-up ejecting the app. Expo client does not have any method to interface with the native system. Even if you are using a plugin which needs to interface with the native system, you will have to eject the app. This is something to do with the dynamic build process of expo.</p>
-
 <p>You will need the basic following to get started:</p>
-
 <ol>
 <li>Node/NPM (recommended installation: <a href="https://github.com/creationix/nvm">nvm</a>)</li>
 <li>Android SDK (or the iOS stuff, I haven&rsquo;t tried those here)</li>
 </ol>
-
 <p>Now for the actual steps</p>
-
 <h3 id="1-install-the-expo-client">1. Install the expo client</h3>
-
-<pre><code class="language-shell">npm install -g expo-cli
-</code></pre>
-
-<h3 id="2-create-your-project">2. Create your project</h3>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm install -g expo-cli
+</code></pre></div><h3 id="2-create-your-project">2. Create your project</h3>
 <p>Choose blank/minimal if expo asks you to choose a template. Keeping things simple is best for the first try. We can always try again if something is missing. Use yarn to install all dependencies.</p>
-
-<pre><code class="language-shell">   expo init basic-project
-   cd basic-project
-</code></pre>
-
-<p>We have a project looking like a simple npm project. A quick search reveals there are no java or gradle files in this project outside of node_modules. Below commands give no output.</p>
-
-<pre><code class="language-shell">   find -name &quot;*.java&quot; -not -path &quot;./node_modules/*&quot;
-   find -name &quot;*.gradle&quot; -not -path &quot;./node_modules/*&quot; 
-</code></pre>
-
-<h3 id="3-run-the-app">3. Run the app</h3>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">expo init basic-project
+cd basic-project
+</code></pre></div><p>We have a project looking like a simple npm project. A quick search reveals there are no java or gradle files in this project outside of node_modules. Below commands give no output.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">find -name <span style="color:#a31515">&#34;*.java&#34;</span> -not -path <span style="color:#a31515">&#34;./node_modules/*&#34;</span>
+find -name <span style="color:#a31515">&#34;*.gradle&#34;</span> -not -path <span style="color:#a31515">&#34;./node_modules/*&#34;</span> 
+</code></pre></div><h3 id="3-run-the-app">3. Run the app</h3>
 <p>Running this app is pretty simple. Just like any npm project, start with a npm start and you will get a local web page on your favourite browser. Make sure you have an Android device connected with USB debugging enabled. Click the link on &ldquo;Run on Android device&rdquo; from the side-bar and your device should open the app screen.</p>
-
 <p>It does not look safe that a web page is installing and launching apps on your device. This web-page should have been hosted on local interface only. A device on your LAN should not be able to open the page and control your device. I am not sure if anybody can edit the code in the application but this is pretty insecure. I just tried and I am also able to publish apps from any computer on the same LAN. Security can not be an after-thought! I think this was also the case with the first version of webpack where the sources where public on LAN with webpack-dev-server.</p>
-
-<h3 id="4-setup-the-android-home-environment-variable">4. setup the ANDROID_HOME environment variable</h3>
-
+<h3 id="4-setup-the-android_home-environment-variable">4. setup the ANDROID_HOME environment variable</h3>
 <p>In case this is not already set, this variable is required in the env. I haven&rsquo;t tested but it might be that if you already have the SDK at some standard locations, this may not be necessary. It was needed in my case.</p>
-
-<pre><code>   export ANDROID_HOME=~/Android/Sdk
-   echo &quot;export ANDROID_HOME=~/Android/Sdk&quot; &gt;&gt; ~/.zshrc
-</code></pre>
-
-<ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">export ANDROID_HOME=~/Android/Sdk
+echo <span style="color:#a31515">&#34;export ANDROID_HOME=~/Android/Sdk&#34;</span> &gt;&gt; ~/.zshrc
+</code></pre></div><ul>
 <li>Replace the correct path in above commands</li>
 <li>Replace <code>.zshrc</code> with your current shell configuration file. e.g. <code>.bashrc</code></li>
 </ul>
-
 <h3 id="5-eject-the-app">5. Eject the app</h3>
-
 <p>If things went as it went for me, <code>yarn eject</code> or <code>npm run eject</code> should successfully eject the app. The eject command changes the files in the project. You might want to backup the folders in case you have some changes that you like to conserve or refer to later. I chose <code>React Native</code> when asked by the script between <code>expo kit</code> and <code>react native</code>. Script will ask for a name also need to be provided to the Android and iOS project. This is the project structure you should get.</p>
-
-<pre><code class="language-shell">   ➜  basic-project git:(master) ✗ tree -L 2 -I node_modules
-   ├── android/
-   │   ├── app/
-   │   ├── build.gradle
-   │   ├── gradle/
-   │   ├── gradle.properties
-   │   ├── gradlew*
-   │   ├── gradlew.bat
-   │   ├── keystores/
-   │   └── settings.gradle
-   ├── App.js
-   ├── app.json
-   ├── assets/
-   │   ├── icon.png
-   │   └── splash.png
-   ├── babel.config.js
-   ├── ios/
-   │   ├── RNBasicProject/
-   │   ├── RNBasicProjectTests/
-   │   ├── RNBasicProject-tvOS/
-   │   ├── RNBasicProject-tvOSTests/
-   │   └── RNBasicProject.xcodeproj/
-   ├── package.json
-   └── yarn.lock
-</code></pre>
-
-<h3 id="6-run-the-app-and-brace-for-crashes">6. run the app and brace for crashes</h3>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">➜  basic-project git:(master) ✗ tree -L 2 -I node_modules
+├── android/
+│   ├── app/
+│   ├── build.gradle
+│   ├── gradle/
+│   ├── gradle.properties
+│   ├── gradlew*
+│   ├── gradlew.bat
+│   ├── keystores/
+│   └── settings.gradle
+├── App.js
+├── app.json
+├── assets/
+│   ├── icon.png
+│   └── splash.png
+├── babel.config.js
+├── ios/
+│   ├── RNBasicProject/
+│   ├── RNBasicProjectTests/
+│   ├── RNBasicProject-tvOS/
+│   ├── RNBasicProject-tvOSTests/
+│   └── RNBasicProject.xcodeproj/
+├── package.json
+└── yarn.lock
+</code></pre></div><h3 id="6-run-the-app-and-brace-for-crashes">6. run the app and brace for crashes</h3>
 <p>Running <code>yarn start</code> can give you the below error:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">➜  basic-project git:(master) ✗ yarn start
+yarn run v1.12.3
+$ react-native start
+internal/modules/cjs/loader.js:582
+    throw err;
+    ^
 
-<pre><code class="language-shell">   ➜  basic-project git:(master) ✗ yarn start
-   yarn run v1.12.3
-   $ react-native start
-   internal/modules/cjs/loader.js:582
-       throw err;
-       ^
-   
-   Error: Cannot find module '@babel/runtime/helpers/interopRequireDefault'
-       at Function.Module._resolveFilename (internal/modules/cjs/loader.js:580:15)
-       at Function.Module._load (internal/modules/cjs/loader.js:506:25)
-       at Module.require (internal/modules/cjs/loader.js:636:17)
-       at require (internal/modules/cjs/helpers.js:20:18)
-       at Object.&lt;anonymous&gt; (/home/vibhav/node-projects/react-native/basic-project/node_modules/react-native/local-cli/cliEntry.js:11:41)
-       at Module._compile (internal/modules/cjs/loader.js:688:30)
-       at Module._compile (/home/vibhav/node-projects/react-native/basic-project/node_modules/pirates/lib/index.js:83:24)
-       at Module._extensions..js (internal/modules/cjs/loader.js:699:10)
-       at Object.newLoader [as .js] (/home/vibhav/node-projects/react-native/basic-project/node_modules/pirates/lib/index.js:88:7)
-       at Module.load (internal/modules/cjs/loader.js:598:32)
-   error Command failed with exit code 1.
-   info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-</code></pre>
-
-<p>This will require the following:</p>
-
-<pre><code class="language-shell">   yarn add -D @babel/runtime
-</code></pre>
-
-<p>After this, the <code>yarn start</code> should be successful. Note that this is only a tunneling and bundling background process. Leave this command running and open a new terminal to run</p>
-
-<pre><code class="language-shell">   yarn android
-</code></pre>
-
-<pre><code>   &gt; Task :app:compileDebugJavaWithJavac FAILED
-   /home/vibhav/node-projects/react-native/basic-project/android/app/src/main/java/com/rnbasicproject/MainApplication.java:5: error: cannot find symbol
-   import com.facebook.react.ReactApplication;
-                            ^
-     symbol:   class ReactApplication
-     location: package com.facebook.react
-</code></pre>
-
-<p>The <code>Cannot find Symbol</code> error goes on repeated a bunch of times for different lines. The only solution I found for this is to replace the version mentioned in <code>package.json</code> to the latest react-native. The default version downloads from expo&rsquo;s fork of react-native. Replacing it with react-native npm published version solved this issue. I haven&rsquo;t looked into what modifications of expo&rsquo;s fork causes this issue or if it require some other modifications to make it work.</p>
-
-<pre><code class="language-json">     &quot;dependencies&quot;: {
-       &quot;react&quot;: &quot;16.5.0&quot;,
-       &quot;react-native&quot;: &quot;https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz&quot;
-     },
-</code></pre>
-
-<pre><code class="language-json">     &quot;dependencies&quot;: {
-       &quot;react&quot;: &quot;16.5.0&quot;,
-       &quot;react-native&quot;: &quot;^0.57.8&quot;
-     },
-</code></pre>
-
-<p><code>0.57.8</code> is the latest react-native version at the time of writing. The <code>^</code> at the start means that npm will try to install a latest version compatible with 0.57.8. <a href="https://docs.npmjs.com/misc/semver#caret-ranges-123-025-004">According to semver</a>, for 0.x range, any change in second digit will result in incompatibility. So, this will upgrade when <code>0.57.9</code> will be released but will not update to <code>0.58.0</code>.</p>
-
+Error: Cannot find module <span style="color:#a31515">&#39;@babel/runtime/helpers/interopRequireDefault&#39;</span>
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:580:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:506:25)
+    at Module.require (internal/modules/cjs/loader.js:636:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.&lt;anonymous&gt; (/home/vibhav/node-projects/react-native/basic-project/node_modules/react-native/local-cli/cliEntry.js:11:41)
+    at Module._compile (internal/modules/cjs/loader.js:688:30)
+    at Module._compile (/home/vibhav/node-projects/react-native/basic-project/node_modules/pirates/lib/index.js:83:24)
+    at Module._extensions..js (internal/modules/cjs/loader.js:699:10)
+    at Object.newLoader [as .js] (/home/vibhav/node-projects/react-native/basic-project/node_modules/pirates/lib/index.js:88:7)
+    at Module.load (internal/modules/cjs/loader.js:598:32)
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run <span style="color:#00f">for</span> documentation about this command.
+</code></pre></div><p>This will require the following:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yarn add -D @babel/runtime
+</code></pre></div><p>After this, the <code>yarn start</code> should be successful. Note that this is only a tunneling and bundling background process. Leave this command running and open a new terminal to run</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yarn android
+</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">&gt; Task :app:compileDebugJavaWithJavac FAILED
+/home/vibhav/node-projects/react-native/basic-project/android/app/src/main/java/com/rnbasicproject/MainApplication.java:5: <span style="color:#2b91af">error</span>: cannot find symbol
+<span style="color:#00f">import</span> com.facebook.react.ReactApplication;
+                         ^
+  symbol:   class ReactApplication
+  location: <span style="color:#00f">package</span> com.facebook.react
+</code></pre></div><p>The <code>Cannot find Symbol</code> error goes on repeated a bunch of times for different lines. The only solution I found for this is to replace the version mentioned in <code>package.json</code> to the latest react-native. The default version downloads from expo&rsquo;s fork of react-native. Replacing it with react-native npm published version solved this issue. I haven&rsquo;t looked into what modifications of expo&rsquo;s fork causes this issue or if it require some other modifications to make it work.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">  <span style="color:#a31515">&#34;dependencies&#34;</span><span style="">:</span> {
+    &#34;react&#34;: <span style="color:#a31515">&#34;16.5.0&#34;</span>,
+    &#34;react-native&#34;: <span style="color:#a31515">&#34;https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz&#34;</span>
+  }<span style="">,</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">  <span style="color:#a31515">&#34;dependencies&#34;</span><span style="">:</span> {
+    &#34;react&#34;: <span style="color:#a31515">&#34;16.5.0&#34;</span>,
+    &#34;react-native&#34;: <span style="color:#a31515">&#34;^0.57.8&#34;</span>
+  }<span style="">,</span>
+</code></pre></div><p><code>0.57.8</code> is the latest react-native version at the time of writing. The <code>^</code> at the start means that npm will try to install a latest version compatible with 0.57.8. <a href="https://docs.npmjs.com/misc/semver#caret-ranges-123-025-004">According to semver</a>, for 0.x range, any change in second digit will result in incompatibility. So, this will upgrade when <code>0.57.9</code> will be released but will not update to <code>0.58.0</code>.</p>
 <p>Running <code>yarn android</code> gives success on the command line. But the app launched on device is a bright scary red.</p>
-
-<h3 id="7-index-js">7. index.js</h3>
-
+<h3 id="7-indexjs">7. index.js</h3>
 <p>On the bright red error screen, you should find something like:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">The development server returned response error code: 404
+</code></pre></div><p>The <code>yarn start</code> command output will show more details:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> BUNDLE  [android, dev] ./index.js ░░░░░░░░░░░░░░░░ 0.0% (0/1)::ffff:127.0.0.1 - - [19/Jan/2019:17:40:39 +0000] &#34;GET /index.delta?platform=android&amp;dev=true&amp;minify=false HTTP/1.1&#34; 404 - &#34;-&#34; &#34;okhttp/3.11.0&#34;
+error: bundling failed: Error: The resource `/home/vibhav/node-projects/react-native/basic-project/index.js` was not found.
+    at /home/vibhav/node-projects/react-native/basic-project/node_modules/metro/src/Server.js:348:15
 
-<pre><code>   The development server returned response error code: 404
-</code></pre>
-
-<p>The <code>yarn start</code> command output will show more details:</p>
-
-<pre><code>    BUNDLE  [android, dev] ./index.js ░░░░░░░░░░░░░░░░ 0.0% (0/1)::ffff:127.0.0.1 - - [19/Jan/2019:17:40:39 +0000] &quot;GET /index.delta?platform=android&amp;dev=true&amp;minify=false HTTP/1.1&quot; 404 - &quot;-&quot; &quot;okhttp/3.11.0&quot;
-   error: bundling failed: Error: The resource `/home/vibhav/node-projects/react-native/basic-project/index.js` was not found.
-       at /home/vibhav/node-projects/react-native/basic-project/node_modules/metro/src/Server.js:348:15
-   
-</code></pre>
-
-<p>We can create a <code>index.js</code> in the root directory to work around this problem and import <code>App.js</code> in that</p>
-
-<pre><code class="language-js">   import App from './App';
-</code></pre>
-
-<h3 id="8-missing-scheduler-module">8. missing scheduler module</h3>
-
+</code></pre></div><p>We can create a <code>index.js</code> in the root directory to work around this problem and import <code>App.js</code> in that</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#00f">import</span> App from <span style="color:#a31515">&#39;./App&#39;</span>;
+</code></pre></div><h3 id="8-missing-scheduler-module">8. missing scheduler module</h3>
 <p>This resulted in another error. While the bright red error screen said</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">The development server returned response error code: 500
+</code></pre></div><p>The <code>yarn start</code> command gave a better error response saying</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Module `scheduler` does not exist in the Haste module map
+</code></pre></div><p>I tried debugging how could a whole package was missing.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">➜  basic-project git:(master) ✗ grep scheduler <span style="color:#a31515">\`</span>find . -type f -iname <span style="color:#a31515">&#39;package.json&#39;</span><span style="color:#a31515">\`</span>
+./node<span style="color:#a31515">\_</span>modules/schedule/package.json:  <span style="color:#a31515">&#34;description&#34;</span>: <span style="color:#a31515">&#34;Cooperative scheduler for the browser environment.&#34;</span>,
+➜  basic-project git:(master) ✗
+➜  basic-project git:(master) ✗ grep -r scheduler | grep require
+node<span style="color:#a31515">\_</span>modules/react-native/Libraries/Renderer/oss/ReactNativeRenderer-prod.js:var scheduler = require(<span style="color:#a31515">&#34;scheduler&#34;</span>),
+node<span style="color:#a31515">\_</span>modules/react-native/Libraries/Renderer/oss/ReactFabric-prod.js:var scheduler = require(<span style="color:#a31515">&#34;scheduler&#34;</span>),
+node<span style="color:#a31515">\_</span>modules/react-native/Libraries/Renderer/oss/ReactNativeRenderer-profiling.js:  tracing = require(<span style="color:#a31515">&#34;scheduler/tracing&#34;</span>),
+node<span style="color:#a31515">\_</span>modules/react-native/Libraries/Renderer/oss/ReactNativeRenderer-profiling.js:  scheduler = require(<span style="color:#a31515">&#34;scheduler&#34;</span>),
+node<span style="color:#a31515">\_</span>modules/react-native/Libraries/Renderer/oss/ReactNativeRenderer-dev.js:var tracing = require(<span style="color:#a31515">&#34;scheduler/tracing&#34;</span>);
+node<span style="color:#a31515">\_</span>modules/react-native/Libraries/Renderer/oss/ReactNativeRenderer-dev.js:var scheduler = require(<span style="color:#a31515">&#34;scheduler&#34;</span>);
+node<span style="color:#a31515">\_</span>modules/react-native/Libraries/Renderer/oss/ReactFabric-profiling.js:  tracing = require(<span style="color:#a31515">&#34;scheduler/tracing&#34;</span>),
+node<span style="color:#a31515">\_</span>modules/react-native/Libraries/Renderer/oss/ReactFabric-profiling.js:  scheduler = require(<span style="color:#a31515">&#34;scheduler&#34;</span>),
+node<span style="color:#a31515">\_</span>modules/react-native/Libraries/Renderer/oss/ReactFabric-dev.js:var tracing = require(<span style="color:#a31515">&#34;scheduler/tracing&#34;</span>);
+node<span style="color:#a31515">\_</span>modules/react-native/Libraries/Renderer/oss/ReactFabric-dev.js:var scheduler = require(<span style="color:#a31515">&#34;scheduler&#34;</span>);
+</code></pre></div><p>The only conclusion I can draw from above two command outputs is that <code>scheduler</code> should have been mentioned in some dependencies but is omitted. Installing <code>scheduler</code>  took me out of this error and on to the next one.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yarn add -D scheduler
+</code></pre></div><h3 id="9-appregistry">9. AppRegistry</h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Module AppRegistry is not a registered callable module
+</code></pre></div><p>Modify <code>index.js</code> to add a few more lines:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00f">import</span> {AppRegistry} from <span style="color:#a31515">&#39;react-native&#39;</span>;
+<span style="color:#00f">import</span> App from <span style="color:#a31515">&#39;./App&#39;</span>;
 
-<pre><code>   The development server returned response error code: 500
-</code></pre>
-
-<p>The <code>yarn start</code> command gave a better error response saying</p>
-
-<pre><code>   Module `scheduler` does not exist in the Haste module map
-</code></pre>
-
-<p>I tried debugging how could a whole package was missing.</p>
-
-<pre><code class="language-shell">   ➜  basic-project git:(master) ✗ grep scheduler \`find . -type f -iname 'package.json'\`
-   ./node\_modules/schedule/package.json:  &quot;description&quot;: &quot;Cooperative scheduler for the browser environment.&quot;,
-   ➜  basic-project git:(master) ✗
-   ➜  basic-project git:(master) ✗ grep -r scheduler | grep require
-   node\_modules/react-native/Libraries/Renderer/oss/ReactNativeRenderer-prod.js:var scheduler = require(&quot;scheduler&quot;),
-   node\_modules/react-native/Libraries/Renderer/oss/ReactFabric-prod.js:var scheduler = require(&quot;scheduler&quot;),
-   node\_modules/react-native/Libraries/Renderer/oss/ReactNativeRenderer-profiling.js:  tracing = require(&quot;scheduler/tracing&quot;),
-   node\_modules/react-native/Libraries/Renderer/oss/ReactNativeRenderer-profiling.js:  scheduler = require(&quot;scheduler&quot;),
-   node\_modules/react-native/Libraries/Renderer/oss/ReactNativeRenderer-dev.js:var tracing = require(&quot;scheduler/tracing&quot;);
-   node\_modules/react-native/Libraries/Renderer/oss/ReactNativeRenderer-dev.js:var scheduler = require(&quot;scheduler&quot;);
-   node\_modules/react-native/Libraries/Renderer/oss/ReactFabric-profiling.js:  tracing = require(&quot;scheduler/tracing&quot;),
-   node\_modules/react-native/Libraries/Renderer/oss/ReactFabric-profiling.js:  scheduler = require(&quot;scheduler&quot;),
-   node\_modules/react-native/Libraries/Renderer/oss/ReactFabric-dev.js:var tracing = require(&quot;scheduler/tracing&quot;);
-   node\_modules/react-native/Libraries/Renderer/oss/ReactFabric-dev.js:var scheduler = require(&quot;scheduler&quot;);
-</code></pre>
-
-<p>The only conclusion I can draw from above two command outputs is that <code>scheduler</code> should have been mentioned in some dependencies but is omitted. Installing <code>scheduler</code>  took me out of this error and on to the next one.</p>
-
-<pre><code class="language-shell">   yarn add -D scheduler
-</code></pre>
-
-<h3 id="9-appregistry">9. AppRegistry</h3>
-
-<pre><code>   Module AppRegistry is not a registered callable module
-</code></pre>
-
-<p>Modify <code>index.js</code> to add a few more lines:</p>
-
-<pre><code class="language-javascript">   import {AppRegistry} from 'react-native';
-   import App from './App';
-   
-   AppRegistry.registerComponent('RNBasicProject', () =&gt; App);
-</code></pre>
-
-<p><em>Make sure to replace <code>RNBasicProject</code> with the name of your Android project
-  that you defined in step 5 during eject process</em></p>
-
+AppRegistry.registerComponent(<span style="color:#a31515">&#39;RNBasicProject&#39;</span>, () =&gt; App);
+</code></pre></div><p><em>Make sure to replace <code>RNBasicProject</code> with the name of your Android project
+that you defined in step 5 during eject process</em></p>
 <p>The above code comes from a sample file found in the <code>node_modules</code></p>
-
-<pre><code class="language-shell">   less node_modules/react-native/local-cli/templates/HelloWorld/index.js
-</code></pre>
-
-<p>In case something doesn&rsquo;t seem to be going right, try the following:</p>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">less node_modules/react-native/local-cli/templates/HelloWorld/index.js
+</code></pre></div><p>In case something doesn&rsquo;t seem to be going right, try the following:</p>
 <ol>
-<li>restart the <code>yarn start</code> process</li>
-<li>Remove the temp files</li>
+<li>
+<p>restart the <code>yarn start</code> process</p>
+</li>
+<li>
+<p>Remove the temp files</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">rm -rf /tmp/haste-map-metro-4-*
+rm -rf /tmp/metro*
+</code></pre></div></li>
 </ol>
-
-<pre><code class="language-shell">   rm -rf /tmp/haste-map-metro-4-*
-   rm -rf /tmp/metro*
-</code></pre>
-
 <p>Bonus point:</p>
-
 <ul>
 <li>No need to shake device everytime, open developer menu on Android device with <code>adb shell input keyevent 82</code></li>
 </ul>
 
-                <br>
-                
-                <p class="back-to-posts"><a href="https://vsinha.me/blog">Back to posts</a></p>
-            </div>
-            <br>
-            <div class="disqus">
-                <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "pursuitofexcellence" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
+
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'pursuitofexcellence';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
-            
-        </div>
-    </div>
-</section>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright 2020 | All code snippets MIT Licensed |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
 
 
 
@@ -473,19 +264,6 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
-  
-
-  <script type="text/javascript">
-    hljs.initHighlightingOnLoad();
-  </script>
-
-
-
-
-
+<script>feather.replace()</script>
 </body>
 </html>
-
