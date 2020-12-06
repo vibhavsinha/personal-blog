@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://vsinha.me/blog/</loc>
-    <lastmod>2019-01-19T23:28:52+05:30</lastmod>
+    <loc>https://vsinha.me/blog/things-i-learned-fast-typing-touch-typing/</loc>
+    <lastmod>2020-12-07T00:16:41+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://vsinha.me/blog/ejecting-react-native-jan-2019/</loc>
-    <lastmod>2019-01-19T23:28:52+05:30</lastmod>
+    <loc>https://vsinha.me/blog/</loc>
+    <lastmod>2020-12-07T00:16:41+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://vsinha.me/</loc>
+    <lastmod>2020-12-07T00:16:41+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vsinha.me/blog/ejecting-react-native-jan-2019/</loc>
     <lastmod>2019-01-19T23:28:52+05:30</lastmod>
   </url>
   

@@ -65,7 +65,7 @@
 <p>We will start as the official documentation describes and continue from there. The <code>create-react-native-app</code> that I had seen last time is now deprecated and project archived. The thing is, doing anything complicated with the  application requires you to &ldquo;eject&rdquo; the app. Unless your application is simply informational, you will end-up ejecting the app. Expo client does not have any method to interface with the native system. Even if you are using a plugin which needs to interface with the native system, you will have to eject the app. This is something to do with the dynamic build process of expo.</p>
 <p>You will need the basic following to get started:</p>
 <ol>
-<li>Node/NPM (recommended installation: <a href="https://github.com/creationix/nvm">nvm</a>)</li>
+<li>Node/NPM (recommended installation: <a href="https://github.com/creationix/nvm" target="_blank" rel="noreferrer noopener">nvm</a>)</li>
 <li>Android SDK (or the iOS stuff, I haven&rsquo;t tried those here)</li>
 </ol>
 <p>Now for the actual steps</p>
@@ -156,7 +156,7 @@ info Visit https://yarnpkg.com/en/docs/cli/run <span style="color:#00f">for</spa
     &#34;react&#34;: <span style="color:#a31515">&#34;16.5.0&#34;</span>,
     &#34;react-native&#34;: <span style="color:#a31515">&#34;^0.57.8&#34;</span>
   }<span style="">,</span>
-</code></pre></div><p><code>0.57.8</code> is the latest react-native version at the time of writing. The <code>^</code> at the start means that npm will try to install a latest version compatible with 0.57.8. <a href="https://docs.npmjs.com/misc/semver#caret-ranges-123-025-004">According to semver</a>, for 0.x range, any change in second digit will result in incompatibility. So, this will upgrade when <code>0.57.9</code> will be released but will not update to <code>0.58.0</code>.</p>
+</code></pre></div><p><code>0.57.8</code> is the latest react-native version at the time of writing. The <code>^</code> at the start means that npm will try to install a latest version compatible with 0.57.8. <a href="https://docs.npmjs.com/misc/semver#caret-ranges-123-025-004" target="_blank" rel="noreferrer noopener">According to semver</a>, for 0.x range, any change in second digit will result in incompatibility. So, this will upgrade when <code>0.57.9</code> will be released but will not update to <code>0.58.0</code>.</p>
 <p>Running <code>yarn android</code> gives success on the command line. But the app launched on device is a bright scary red.</p>
 <h3 id="7-indexjs">7. index.js</h3>
 <p>On the bright red error screen, you should find something like:</p>

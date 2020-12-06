@@ -7,10 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright 2020 | All code snippets MIT Licensed</copyright>
-    <lastBuildDate>Sat, 19 Jan 2019 23:28:52 +0530</lastBuildDate>
-    
-	<atom:link href="https://vsinha.me/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Mon, 07 Dec 2020 00:16:41 +0530</lastBuildDate><atom:link href="https://vsinha.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>8 things I Learned while Touch Typing</title>
+      <link>https://vsinha.me/blog/things-i-learned-fast-typing-touch-typing/</link>
+      <pubDate>Mon, 07 Dec 2020 00:16:41 +0530</pubDate>
+      
+      <guid>https://vsinha.me/blog/things-i-learned-fast-typing-touch-typing/</guid>
+      <description>At the start of 2020, I checked my typing speed and found that I was typing much slower than what I could.</description>
+    </item>
     
     <item>
       <title>Ejecting React Native Jan 2019</title>

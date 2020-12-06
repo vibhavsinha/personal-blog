@@ -6,10 +6,6 @@
     <description>Recent content in Categories on Vibhav Sinha</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© Copyright 2020 | All code snippets MIT Licensed</copyright>
-    
-	<atom:link href="https://vsinha.me/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>© Copyright 2020 | All code snippets MIT Licensed</copyright><atom:link href="https://vsinha.me/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
